@@ -35,8 +35,8 @@ export class UsuarioService {
         where: UsuarioEntity | UsuarioEntity[],
         skip: number = 0,
         take: number = 10
-    ) {
-        this._repositorioUsuario
+    ): Promise <UsuarioEntitiy[]> {
+        return this._repositorioUsuario
             .find({
                 where: where,
                 skip: skip,
