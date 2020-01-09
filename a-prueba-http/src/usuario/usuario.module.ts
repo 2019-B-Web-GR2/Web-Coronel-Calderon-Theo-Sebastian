@@ -1,30 +1,41 @@
-import {Module} from "@nestjs/common";
-import {UsuarioController} from "./usuario.controller";
-import {UsuarioService} from "./usuario.service";
+import {Module} from '@nestjs/common';
+// @ts-ignore
+import {AppController} from './app.controller';
+// @ts-ignore
+import {AppService} from './app.service';
 import {TypeOrmModule} from "@nestjs/typeorm";
-import {UsuarioEntity} from "./usuario.entity";
+// @ts-ignore
+import {UsuarioEntity} from "./usuario/usuario.entity";
+// @ts-ignore
+import {UsuarioModule} from "./usuario/usuario.module";
+// @ts-ignore
+import {UsuarioService} from "./usuario/usuario.service";
 
 @Module({
     imports: [
-        TypeOrmModule
-            .forFeature([
-                    UsuarioEntity // Entidades a usarse dentro
-                                  // del modulo.
+        UsuarioModule,
+        TypeOrmModule.forRoot(
+            {
+                type: 'mysql',
+                host: 'localhost',
+                port: 32769,
+                username: 'theo',
+                password: 'admin123',
+                database: 'web',
+                entities: [
+                    UsuarioEntity,
                 ],
-                'default' // Nombre de la cadena de conex.
-            ),
+                synchronize: true, // Crear -> true , Conectar -> false
+            }
+        ),
     ],
-    controllers: [
-        UsuarioController,
-    ],
-    providers: [
-        UsuarioService,
-    ],
-    exports: [
-        UsuarioService,
-    ]
+    controllers: [AppController],
+    providers: [AppService],
 })
+export class AppModule {
+    constructor(
+        private _usuarioService: UsuarioService,
+    ) {
 
-export class UsuarioModule {
-        // Todas las clases pueden importar o exportar las dependencias
+    }
 }
