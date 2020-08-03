@@ -80,14 +80,14 @@
                         <td><%= productos.fechaCreacion%> </td>
                         <td><%= productos.numeroHorasPorSemana%> </td>
                         <td>
+                            <form action="/api/tienda/gestion/editar/<%=idPadre%>" method="post">
+                                <input type="text" name="productoId" hidden value="<%=productos.materiaId%> ">
+                                <button type="submit" class="btn btn-xs btn-info">Editar</button>
+                            </form>
                             <form action="/api/tienda/gestion/eliminar/<%=idPadre%>" method="post">
                                 <input type="text" name="productoId" hidden value="<%=productos.materiaId%> ">
                                 <button type="submit" class="btn btn-xs btn-info">Borrar</button>
                             </form>
-                            <!--<form action="/api/tienda/gestion/editar/<%=idPadre%>" method="post">
-                                <input type="text" name="productoId" hidden value="<%=productos.materiaId%> ">
-                                <button type="submit" class="btn btn-xs btn-info">Editar</button>
-                            </form>-->
                         </td>
                     </tr>
                 <% })%>

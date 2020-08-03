@@ -38,7 +38,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
           UsuarioEntity
       ],
       synchronize: true,
-      dropSchema: true
+      // dropSchema: true
     })
     , TypeOrmModule.forFeature(
         [

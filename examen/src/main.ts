@@ -26,6 +26,6 @@ async function bootstrap() {
     app.setBaseViewsDir(join(__dirname, '..', 'views'));
     app.use(express.static('publico'));
     app.use(cookieParser('Secreto'));
-    await app.listen(3000);
+    await app.listen(3008);
 }
 bootstrap();

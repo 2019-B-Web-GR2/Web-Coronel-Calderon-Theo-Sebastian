@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Comprar en Linea</title>
+    <title>Materias en Linea</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
     <style>
@@ -24,7 +24,7 @@
     <div class="col-md-12 form-group">
         <div class="form-horizontal">
             <form id="myForm" action="/api/tienda/gestion/consultar-por-id/<%=idPedido%>" method="post">
-                <label class="col-xs-4 control-label" for="selectId">estudiante: </label>
+                <label class="col-xs-4 control-label" for="selectId">Profesor: </label>
                 <select class="col-xs-6 form-control" name="tiendaId" id="selectId">
                     <% listaTiendas.forEach((tienda)=>{ %>
 
@@ -65,11 +65,11 @@
                 <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>codigo</th>
-                    <th>descripcion</th>
-                    <th>activo</th>
-                    <th>fechaCreacion</th>
-                    <th>numeroHorasPorSemana</th>
+                    <th>Codigo</th>
+                    <th>Descripcion</th>
+                    <th>Activo</th>
+                    <th>Fecha Creacion</th>
+                    <th>NumeroHorasPorSemana</th>
                     <th <%if (idPedido==0){%>class="hidden"<%}%>>Acciones</th>
                 </tr>
                 </thead>

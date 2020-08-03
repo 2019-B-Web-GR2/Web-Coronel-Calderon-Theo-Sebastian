@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gestion de Locales</title>
+    <title>Gestion de usuarios</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         .espacio{
@@ -49,10 +49,10 @@
                 <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>apellido</th>
-                    <th>fechaNacimiento</th>
-                    <th>semestreActual</th>
-                    <th>graduado</th>
+                    <th>Apellido</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Semestre </th>
+                    <th>Activo</th>
                     <th>Acciones</th>
                 </tr>
                 </thead>
@@ -75,7 +75,7 @@
                             <form action="/api/tienda/eliminar" method="post">
                                 <input type="text" name="padreId" hidden  value="<%=tienda.estudianteId%>">
                                 <a href="http://localhost:3000/api/tienda/gestion/<%=tienda.estudianteId%>">
-                                    <button type="button" class="btn btn-xs btn-info">Productos</button>
+                                    <button type="button" class="btn btn-xs btn-info">Materias</button>
                                 </a>
                             </form>
                         </td>
